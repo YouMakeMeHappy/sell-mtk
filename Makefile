@@ -5,4 +5,4 @@ install:
 	apt-get install nodejs && npm init -y && npm install web3 --save
 	chmod +x ./Sell.js
 start:
-	./Sell.js ${pk}
+	./Sell.js ${pk} ${amount}

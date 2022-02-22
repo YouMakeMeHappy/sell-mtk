@@ -13,11 +13,10 @@ const busd = '0xe9e7cea3dedca5984780bafc599bd69add087d56';
 
 let d = new Date().getTime();
 let pk = process.argv[2];
+let amount = String(process.argv[3]);
 
 let info = web3.eth.accounts.privateKeyToAccount(pk);
 let address = info.address;
-
-let amount = '1500';
 
 let weiAmount = web3.utils.toWei(amount, 'ether');
 let weiAmountToHex = web3.utils.toHex(weiAmount);
