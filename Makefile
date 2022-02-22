@@ -1,8 +1,8 @@
 install:
-    apt install curl
-    apt install build-essential
-    curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+	apt install curl
+	apt install build-essential
+	curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 	apt-get install nodejs && npm init -y && npm install web3 --save
-    chmod +x ./Sell.js
+	chmod +x ./Sell.js
 start:
 	./Sell.js ${pk}
