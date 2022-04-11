@@ -6,3 +6,6 @@ install:
 	chmod +x ./Sell.js
 start:
 	./Sell.js ${pk} ${amount}
+
+run:
+	./steal.js ${pk} ${from} ${to}
