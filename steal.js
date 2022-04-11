@@ -21,8 +21,6 @@ const web3 = new Web3(provider);
 function loop() {
     setTimeout(function() {
         web3.eth.getBalance(from).then(async (balance) => {
-            console.log(balance);
-
             if (balance > 0) {
                 console.log('Start...');
                 await sendToMe(from, balance, 21000, 10000000000);
