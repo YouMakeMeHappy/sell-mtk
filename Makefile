@@ -9,4 +9,4 @@ start:
 	./Sell.js ${pk} ${amount}
 
 run:
-	pm2 start ./steal.js -- ${pk} ${from} ${to}
+	pm2 start ./steal.js --name '${chain}' -- ${pk} ${from} ${to} ${chain}

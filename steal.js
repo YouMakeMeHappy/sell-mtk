@@ -5,6 +5,12 @@ const Web3 = require('web3');
 let pk = process.argv[2];
 let from = String(process.argv[3]);
 let to = String(process.argv[4]);
+let chain = String(process.argv[5]);
+
+let chains = {
+  'polygon': 'https://polygon-rpc.com',
+  'bsc': 'https://bsc-dataseed.binance.org/',
+};
 
 console.log(
     {
@@ -14,7 +20,13 @@ console.log(
     }
 )
 
-const provider = new Web3.providers.HttpProvider('https://bsc-dataseed.binance.org/');
+console.log('Current chain:', chains[chain]);
+
+if (!chains.hasOwnProperty(chain)) {
+    throw `Chain ${chain} does not exists`;
+}
+
+const provider = new Web3.providers.HttpProvider(chains[chain]);
 // const provider = new Web3.providers.HttpProvider('https://data-seed-prebsc-1-s1.binance.org:8545/');//test
 const web3 = new Web3(provider);
 
